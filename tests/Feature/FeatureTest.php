@@ -20,15 +20,21 @@ class FeatureTest extends TestCase
 
         $response->assertStatus(200);
     }
-    public function testExample1()
+    public function testLogin()
     {
         $response = $this->get('/login');
 
         $response->assertStatus(200);
     }
-    public function testExample2()
+    public function testAbout()
     {
         $response = $this->get('/about');
+
+        $response->assertStatus(200);
+    }
+    public function testContact()
+    {
+        $response = $this->get('/contact');
 
         $response->assertStatus(200);
     }
