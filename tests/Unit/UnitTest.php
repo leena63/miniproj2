@@ -67,6 +67,12 @@ class UnitTest extends TestCase
         $cars->save();
         $this->assertTrue($cars->delete());
     }
+    public function testDataTypeCar()
+    {
+        $cars = car::inRandomOrder()->first();
+        $year = (int)$cars->Year;
+        $this->assertInternalType("int", $year);
+    }
 
     public function testInsertCar()
     {
