@@ -29,4 +29,13 @@ class UnitTest extends TestCase
         $user->name = 'Steve Smith';
         $this->assertTrue($user->save());
     }
+    public function testDelete()
+    {
+        $user = new  User();
+        $user->name = "Shreya";
+        $user->email = "Shreya@gmail.com";
+        $user->password = 'qwerty';
+        $user->save();
+        $this->assertTrue($user->delete());
+    }
 }
