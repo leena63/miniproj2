@@ -46,6 +46,12 @@ class UnitTest extends TestCase
         $user->password = "123456";
         $this->assertTrue($user->save());
     }
+    public function testUpdateCar()
+    {
+        $cars = car::find(1);
+        $cars->year = 2000;
+        $this->assertTrue($cars->save());
+    }
     public function testInsertCar()
     {
         $cars= new Car();
