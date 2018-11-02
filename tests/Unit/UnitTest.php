@@ -14,15 +14,7 @@ class UnitTest extends TestCase
      *
      * @return void
      */
-    public function testInsertUser()
-    {
 
-        $user = new User();
-        $user->name = "Leena Patil";
-        $user->email = "lp277@njit.com";
-        $user->password = "123456";
-        $this->assertTrue($user->save());
-    }
     public function testUpdate()
     {
         $user = User::find(1);
@@ -37,5 +29,20 @@ class UnitTest extends TestCase
         $user->password = 'qwerty';
         $user->save();
         $this->assertTrue($user->delete());
+    }
+    public function testCount()
+    {
+        $user = User::all();
+        $recordsCount = $user->count();
+        $this->assertEquals(50, $recordsCount);
+    }
+    public function testInsertUser()
+    {
+
+        $user = new User();
+        $user->name = "Leena Patil";
+        $user->email = "lp277@njit.com";
+        $user->password = "123456";
+        $this->assertTrue($user->save());
     }
 }
