@@ -23,4 +23,10 @@ class UnitTest extends TestCase
         $user->password = "123456";
         $this->assertTrue($user->save());
     }
+    public function testUpdate()
+    {
+        $user = User::find(1);
+        $user->name = 'Steve Smith';
+        $this->assertTrue($user->save());
+    }
 }
