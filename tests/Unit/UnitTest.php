@@ -52,6 +52,12 @@ class UnitTest extends TestCase
         $cars->year = 2000;
         $this->assertTrue($cars->save());
     }
+    public function testCountCar()
+    {
+        $cars = car::all();
+        $carRecordsCount = $cars->count();
+        $this->assertEquals(50,$carRecordsCount);
+    }
     public function testDeleteCar()
     {
         $cars = new car();
@@ -61,6 +67,7 @@ class UnitTest extends TestCase
         $cars->save();
         $this->assertTrue($cars->delete());
     }
+
     public function testInsertCar()
     {
         $cars= new Car();
